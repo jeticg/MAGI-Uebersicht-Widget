@@ -105,7 +105,7 @@ render: -> """
 
 
         <div class="textbox" style="left: 12.25em; top:10em">MELCHIOR</div>
-        <div class="textbox" style="left: 6.0em; top:16.1em">BALTHA</div>
+        <div class="textbox" style="left: 4.0em; top:16.1em">BALTHASAR</div>
         <div class="textbox" style="right:6.5em; top:16.1em">CASPER</div>
 
         <div class="statusbox" id="ME253" style="left: 10.65em; top:3.75em"> ONLINE </div>
