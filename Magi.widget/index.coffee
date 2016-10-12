@@ -82,11 +82,43 @@ style: """
         border: 0.2em solid white
         top: 37.5%
         left: 33.2%
+    .circle1
+        opacity: 0.75
+        background-color: rgba(204, 0, 102, 0)
+        border: 3px solid rgba(191, 191, 191, 1)
+        height: 18em
+        width: 18em
+        position: absolute
+        left: 6em
+        top: 4.1em
+        border-radius: 10em
+    .circle2
+        opacity: 0.75
+        background-color: rgba(204, 0, 102, 0)
+        border: 3px solid rgba(191, 191, 191, 1)
+        height: 20em
+        width: 20em
+        position: absolute
+        left: 5em
+        top: 3.2em
+        border-radius: 10em
+    .dialog
+        font-size: .75em
+        position: absolute
+        left: 15em
+        width: 10em
+        height: 3em
+        color: rgba(191, 191, 191, 1)
+        top: 26.5em
+        margin: auto
+        font-weight: bold
 
 """
 
 render: -> """
     <div class="center">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
         <div class="top">
             <div class="bl"></div>
             <div class="br"></div>
@@ -112,6 +144,7 @@ render: -> """
         <div class="statusbox" id="MD103" style="left: 4.25em; top:15.25em"> ONLINE </div>
         <div class="statusbox" id="MD711" style="right:4.25em; top:15.25em"> ONLINE </div>
 
+        <div class="dialog">Alle System Bereit</div>
     </div>
 """
 #        <div class="serverbox" style="background:black">HAUPTSERVER</div>
@@ -159,5 +192,8 @@ update: (output, domEl) ->
         $(domEl).find(".right .br").css("border-left-color", "rgba(127,10,10,1)")
         $(domEl).find(".right .bl").css("border-right-color", "rgba(127,10,10,1)")
         $(domEl).find('#MD711').text("OFFLINE")
-#   functions
-    # This is for the warning animations, for better battery life, please consider changing these settings
+
+    if (parseInt(AllOutputs[0])+parseInt(AllOutputs[1])+parseInt(AllOutputs[2]) == 0)
+        $(domEl).find('.dialog').text("Alle System Bereit")
+    else
+        $(domEl).find('.dialog').text("Code: #{AllOutputs[0]}, #{AllOutputs[1]}, #{AllOutputs[2]}")
