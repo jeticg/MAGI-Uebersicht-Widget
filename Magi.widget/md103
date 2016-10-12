@@ -1,0 +1,7 @@
+if [[ $HOSTNAME != *"MD103"* ]]
+then
+    ssh -q md103.icloud exit
+    echo $?
+else
+    echo 0
+fi
