@@ -66,11 +66,22 @@ style: """
     .statusbox
         opacity: 0.75
         position: absolute
-        font-size: 1.5em
+        font-size: 1.15em
+        width: 4.5em
         color: white
-        font-family: Lucida Grande
+        font-family: Futura
         font-weight: bold
-        border: 0.15em solid white
+        border: 0.2em solid white
+    .serverbox
+        opacity: 0.75
+        position: absolute
+        font-size: 1.25em
+        color: white
+        font-family: Futura
+        font-weight: bold
+        border: 0.2em solid white
+        top: 37.5%
+        left: 33.2%
 
 """
 
@@ -97,11 +108,15 @@ render: -> """
         <div class="textbox" style="left: 6.0em; top:16.1em">BALTHA</div>
         <div class="textbox" style="right:6.5em; top:16.1em">CASPER</div>
 
-        <div class="statusbox" id="ME253" style="left: 8em;  top:2.5em"> ONLINE </div>
-        <div class="statusbox" id="MD103" style="left: 2.5em; top:11.75em"> ONLINE </div>
-        <div class="statusbox" id="MD711" style="right:2.5em; top:11.75em"> ONLINE </div>
+        <div class="statusbox" id="ME253" style="left: 10.65em; top:3.75em"> ONLINE </div>
+        <div class="statusbox" id="MD103" style="left: 4.25em; top:15.25em"> ONLINE </div>
+        <div class="statusbox" id="MD711" style="right:4.25em; top:15.25em"> ONLINE </div>
+
     </div>
 """
+#        <div class="serverbox" style="background:black">HAUPTSERVER</div>
+#        <div class="statusbox" id="SERVER" style="left:10.65em; top:11.75em; background:black"> ONLINE </div>
+
 
 command:    "   sh Magi.widget/me253 &&
                 sh Magi.widget/md103 &&
@@ -121,7 +136,7 @@ update: (output, domEl) ->
         $(domEl).find(".top").css("background", "rgba(127,10,10,1)")
         $(domEl).find(".top .br").css("border-left-color", "rgba(127,10,10,1)")
         $(domEl).find(".top .bl").css("border-right-color", "rgba(127,10,10,1)")
-        $(domEl).find('#ME253').text("OFFLIN")
+        $(domEl).find('#ME253').text("OFFLINE")
 
     if (parseInt(AllOutputs[1]) == 0)
         $(domEl).find(".left").css("background", "rgba(10,10,10,1)")
@@ -132,7 +147,7 @@ update: (output, domEl) ->
         $(domEl).find(".left").css("background", "rgba(127,10,10,1)")
         $(domEl).find(".left .br").css("border-left-color", "rgba(127,10,10,1)")
         $(domEl).find(".left .bl").css("border-right-color", "rgba(127,10,10,1)")
-        $(domEl).find('#MD103').text("OFFLIN")
+        $(domEl).find('#MD103').text("OFFLINE")
 
     if (parseInt(AllOutputs[2]) == 0)
         $(domEl).find(".right").css("background", "rgba(10,10,10,1)")
@@ -143,6 +158,6 @@ update: (output, domEl) ->
         $(domEl).find(".right").css("background", "rgba(127,10,10,1)")
         $(domEl).find(".right .br").css("border-left-color", "rgba(127,10,10,1)")
         $(domEl).find(".right .bl").css("border-right-color", "rgba(127,10,10,1)")
-        $(domEl).find('#MD711').text("OFFLIN")
+        $(domEl).find('#MD711').text("OFFLINE")
 #   functions
     # This is for the warning animations, for better battery life, please consider changing these settings
