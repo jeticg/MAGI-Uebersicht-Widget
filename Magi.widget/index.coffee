@@ -1,6 +1,7 @@
 refreshFrequency: 5000
 
 style: """
+    font-size: 16px
     font-family: Futura
     text-transform: uppercase
     position:absolute
