@@ -1,7 +1,7 @@
 refreshFrequency: 10000
 
 style: """
-    font-size: 25px
+    font-size: 16px
     font-family: Futura
     text-transform: uppercase
     opacity: 0.75
