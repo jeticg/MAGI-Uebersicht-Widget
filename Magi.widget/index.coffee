@@ -1,21 +1,20 @@
-refreshFrequency: 5000
+refreshFrequency: 10000
 
 style: """
+    font-size: 25px
     font-family: Futura
     text-transform: uppercase
-    position:absolute
     opacity: 0.75
-    text-align:center
-    text-decoration:none
+    text-align: center
+    text-decoration: none
+    margin: auto
     .center
         position: absolute
+        top: 8em
+        left: 36.25em
         background: transparent
         height: 30em
         width: 30em
-        top:  12em
-        left: 28em
-        vertical-align: middle
-
     .top
         position: absolute
         background: rgba(255,10,10,1)
@@ -41,16 +40,16 @@ style: """
         transform: rotate(120deg)
     .br
         position: absolute
-        bottom: -2.2em;
+        bottom: -2.16em;
         right: 0;
         border-bottom: 2.2em solid transparent;
-        border-left: 3.75em solid rgba(255,10,10,1);
+        border-left: 3.76em solid rgba(255,10,10,1);
     .bl
         position: absolute
-        bottom: -2.2em;
+        bottom: -2.16em;
         left: 0;
         border-bottom: 2.2em solid transparent;
-        border-right: 3.75em solid rgba(255,10,10,1);
+        border-right: 3.76em solid rgba(255,10,10,1);
     .numbox
         opacity: 0.75
         position: absolute
@@ -138,7 +137,7 @@ render: -> """
 
         <div class="textbox" style="left: 12.25em; top:10em">MELCHIOR</div>
         <div class="textbox" style="left: 4.0em; top:16.1em">BALTHASAR</div>
-        <div class="textbox" style="right:6.5em; top:16.1em">CASPER</div>
+        <div class="textbox" style="right:6.5em; top:16.1em">SERVER</div>
 
         <div class="statusbox" id="ME253" style="left: 10.65em; top:3.75em"> ONLINE </div>
         <div class="statusbox" id="MD103" style="left: 4.25em; top:15.25em"> ONLINE </div>
@@ -153,7 +152,7 @@ render: -> """
 
 command:    "   sh Magi.widget/me253 &&
                 sh Magi.widget/md103 &&
-                sh Magi.widget/md711
+                sh Magi.widget/server
             "
 #afterRender: (domEl) ->
 

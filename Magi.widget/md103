@@ -1,6 +1,6 @@
 if [[ $HOSTNAME != *"MD103"* ]]
 then
-    ssh -q md103.icloud exit
+    ssh -o ConnectTimeout=4 -q balthasar exit
     echo $?
 else
     echo 0

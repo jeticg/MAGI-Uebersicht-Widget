@@ -1,6 +1,6 @@
 if [[ $HOSTNAME != *"MD711"* ]]
 then
-    ssh -q md711.icloud exit
+    ssh -o ConnectTimeout=4 -q casper exit
     echo $?
 else
     echo 0
