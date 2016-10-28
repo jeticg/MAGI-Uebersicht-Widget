@@ -193,6 +193,6 @@ update: (output, domEl) ->
         $(domEl).find('#MD711').text("OFFLINE")
 
     if (parseInt(AllOutputs[0])+parseInt(AllOutputs[1])+parseInt(AllOutputs[2]) == 0)
-        $(domEl).find('.dialog').text("Alle System Bereit")
+        $(domEl).find('.dialog').text("Alle Systeme sind Bereit")
     else
         $(domEl).find('.dialog').text("Code: #{AllOutputs[0]}, #{AllOutputs[1]}, #{AllOutputs[2]}")
