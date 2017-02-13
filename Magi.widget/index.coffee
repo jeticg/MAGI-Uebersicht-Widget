@@ -2,16 +2,17 @@ refreshFrequency: 10000
 
 style: """
     font-size: 16px
+    left: 50%
+    top: 50%
+    margin-left: -15em
+    margin-top: -12em
     font-family: Futura
     text-transform: uppercase
     opacity: 0.75
     text-align: center
     text-decoration: none
-    margin: auto
     .center
         position: absolute
-        top: 8em
-        left: 36.25em
         background: transparent
         height: 30em
         width: 30em
