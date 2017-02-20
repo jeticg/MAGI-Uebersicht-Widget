@@ -1,7 +1,0 @@
-if [[ $HOSTNAME != *"MD103"* ]]
-then
-    ssh -o ConnectTimeout=4 -q balthasar exit
-    echo $?
-else
-    echo 0
-fi

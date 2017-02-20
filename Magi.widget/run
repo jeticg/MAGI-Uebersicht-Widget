@@ -1,0 +1,12 @@
+run() {
+    ssh -o ConnectTimeout=4 -q me253.org exit
+    sed -i -e "1s/.*/$?/"  Magi.widget/output
+    ssh -o ConnectTimeout=4 -q md103.org exit
+    sed -i -e "2s/.*/$?/"  Magi.widget/output
+    ssh -o ConnectTimeout=4 -q jetic.org exit
+    sed -i -e "3s/.*/$?/"  Magi.widget/output
+}
+
+run &>/dev/null &disown
+
+cat Magi.widget/output

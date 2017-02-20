@@ -1,7 +1,0 @@
-if [[ $HOSTNAME != *"MD711"* ]]
-then
-    ssh -o ConnectTimeout=4 -q casper exit
-    echo $?
-else
-    echo 0
-fi

@@ -1,7 +1,7 @@
 refreshFrequency: 10000
 
 style: """
-    font-size: 16px
+    font-size: 20px
     left: 50%
     top: 50%
     margin-left: -15em
@@ -151,9 +151,7 @@ render: -> """
 #        <div class="statusbox" id="SERVER" style="left:10.65em; top:11.75em; background:black"> ONLINE </div>
 
 
-command:    "   sh Magi.widget/me253 &&
-                sh Magi.widget/md103 &&
-                sh Magi.widget/server
+command:    "   sh Magi.widget/run
             "
 #afterRender: (domEl) ->
 

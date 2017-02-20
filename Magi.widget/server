@@ -1,7 +1,0 @@
-if [[ $HOSTNAME != *"jetic.org"* ]]
-then
-    ssh -o ConnectTimeout=4 -q jetic.org exit
-    echo $?
-else
-    echo 0
-fi

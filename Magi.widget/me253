@@ -1,7 +1,0 @@
-if [[ $HOSTNAME != *"ME253"* ]]
-then
-    ssh -o ConnectTimeout=4 -q melchior exit
-    echo $?
-else
-    echo 0
-fi
