@@ -153,8 +153,8 @@ render: -> """
 
 command:    "   sh Magi.widget/run
             "
-#afterRender: (domEl) ->
-
+afterRender: (domEl) ->
+    @run "  rm Magi.widget/run.working"
 
 update: (output, domEl) ->
     AllOutputs = output.split('\n')
