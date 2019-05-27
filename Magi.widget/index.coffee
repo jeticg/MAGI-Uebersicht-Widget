@@ -1,7 +1,7 @@
 refreshFrequency: 10000
 
 style: """
-    font-size: 20px
+    font-size: 18px
     left: 50%
     top: 50%
     margin-left: -15em
@@ -113,6 +113,20 @@ style: """
         margin: auto
         font-weight: bold
 
+    .nachricht
+        position: absolute
+        top: 2.5em
+        height: 2.75em
+        left: 0em
+        width: 9.5em
+        background-color: rgba(127, 10, 10, 0.9)
+        opacity: 0
+        font-size: 3em
+        color: white
+        font-family: Futura
+        font-weight: bold
+        border: 0.25em solid white
+
 """
 
 render: -> """
@@ -131,20 +145,23 @@ render: -> """
             <div class="bl"></div>
             <div class="br"></div>
         </div>
-        <div class="numbox" style="left: 3.7em;  top:1.6em">1</div>
-        <div class="numbox" style="left: 2.7em;  top:3.5em">2</div>
+        <div class="numbox" style="left: 3.7em; top:1.6em">1</div>
+        <div class="numbox" style="left: 2.7em; top:3.5em">2</div>
         <div class="numbox" style="right:2.7em; top:3.5em">3</div>
 
 
         <div class="textbox" style="left: 12.25em; top:10em">MELCHIOR</div>
         <div class="textbox" style="left: 4.0em; top:16.1em">BALTHASAR</div>
-        <div class="textbox" style="right:6.5em; top:16.1em">SERVER</div>
+        <div class="textbox" style="right:6.5em; top:16.1em">KASPER</div>
 
         <div class="statusbox" id="ME253" style="left: 10.65em; top:3.75em"> ONLINE </div>
         <div class="statusbox" id="MD103" style="left: 4.25em; top:15.25em"> ONLINE </div>
         <div class="statusbox" id="MD711" style="right:4.25em; top:15.25em"> ONLINE </div>
 
         <div class="dialog">Alle System Bereit</div>
+        <div class="nachricht">
+            VERBINDUNG GETRENNT
+        </div>
     </div>
 """
 #        <div class="serverbox" style="background:black">HAUPTSERVER</div>
@@ -190,6 +207,11 @@ update: (output, domEl) ->
         $(domEl).find(".right .br").css("border-left-color", "rgba(127,10,10,1)")
         $(domEl).find(".right .bl").css("border-right-color", "rgba(127,10,10,1)")
         $(domEl).find('#MD711').text("OFFLINE")
+
+    if (parseInt(AllOutputs[3]) == 0)
+        $(domEl).find(".nachricht").css("opacity", "0")
+    else
+        $(domEl).find(".nachricht").css("opacity", "1")
 
     if (parseInt(AllOutputs[0])+parseInt(AllOutputs[1])+parseInt(AllOutputs[2]) == 0)
         $(domEl).find('.dialog').text("Alle Systeme sind Bereit")

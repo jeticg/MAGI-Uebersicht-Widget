@@ -1,12 +1,14 @@
 run() {
     if [ ! -f Magi.widget/run.working ]; then
         touch Magi.widget/run.working
-        ssh -o ConnectTimeout=4 -q me253.org exit
+        ssh -o ConnectTimeout=4 -q melchior exit
         sed -i "" "1s/.*/$?/"  Magi.widget/output
-        ssh -o ConnectTimeout=4 -q md103.org exit
+        ssh -o ConnectTimeout=4 -q balthasar exit
         sed -i "" "2s/.*/$?/"  Magi.widget/output
-        ssh -o ConnectTimeout=4 -q jetic.org exit
+        ssh -o ConnectTimeout=4 -q kasper exit
         sed -i "" "3s/.*/$?/"  Magi.widget/output
+        ssh -o ConnectTimeout=4 -q jetic.org exit
+        sed -i "" "4s/.*/$?/"  Magi.widget/output
         rm Magi.widget/run.working
     fi
 }
